@@ -40,3 +40,32 @@ exports.createTrainer = async (req, res) => {
         });
     }
 };
+
+
+exports.retrieveTrainer = async (req, res) => {
+    try {
+        const { trainerId } = req.params;
+        if (!trainerId) {
+            return res.status(400).json({ error: "Trainer ID is required" });
+        }
+
+        const trainee = await Trainer.findById(trainerId);
+        if (trainee) {
+            res.status(200).json({
+                trainerId: newTrainer._id,
+                fullname: newTrainer.fullname,
+                age: newTrainer.age,
+                location: newTrainer.location,
+                emailId: newTrainer.emailId,
+                skills: newTrainer.skills,
+                mobile: newTrainer.mobile,
+                gender: newTrainer.gender
+            });
+        } else {
+            res.status(404).json({ error: "Trainee not found" });
+        }
+    } catch (error) {
+        console.log("Error in retrieveTrainee controller", error.message);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
