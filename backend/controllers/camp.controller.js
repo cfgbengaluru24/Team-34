@@ -1,5 +1,5 @@
-// import Camp from "../models/camp.model";
 const Camp = require('../models/camp.model.js');
+const Trainer = require('../models/trainer.model.js');
 
 exports.createCamp = async (req, res) => {
     try {
@@ -65,6 +65,27 @@ exports.getCampUsingId = async (req, res) => {
             });
         }
         res.status(200).json(camp);
+    } catch (error) {
+        console.log("Error in camp controller getCampUsingId", error.message);
+        res.status(500).json({
+            error: "Internal server error"
+        });
+    }
+};
+
+exports.getCampUsingVenue = async (req, res) => {
+    const { location,startTime } = req.body;
+    try {
+        const camp = await Camp.findOne({location,startTime})
+        if (!camp) {
+            return res.status(404).json({
+                error: "Camp not found"
+            });
+        }
+        
+        res.status(200).json(camp.appliedTrainerIds);
+        console.log(camp);
+        
     } catch (error) {
         console.log("Error in camp controller getCampUsingId", error.message);
         res.status(500).json({
