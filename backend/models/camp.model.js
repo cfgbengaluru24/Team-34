@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+const mongoose = require('mongoose');
 const campSchema = new mongoose.Schema({
   location: {
     type: String,
@@ -33,4 +32,4 @@ const campSchema = new mongoose.Schema({
 
 const Camp = mongoose.model("Camp", campSchema);
 
-export default Camp;
+module.exports = Camp;

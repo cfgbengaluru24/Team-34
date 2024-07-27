@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+const mongoose = require('mongoose');
 const traineeSchema = new mongoose.Schema({
   fullname: {
     type: String,
@@ -41,4 +40,4 @@ const traineeSchema = new mongoose.Schema({
 
 const Trainee = mongoose.model("Trainee", traineeSchema);
 
-export default Trainee;
+module.exports = Trainee;

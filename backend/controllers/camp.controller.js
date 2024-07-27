@@ -1,25 +1,27 @@
-import Camp from "../models/camp.model";
+// import Camp from "../models/camp.model";
+const Camp = require('../models/camp.model.js');
 
-export const createCamp = async (req, res) => {
+exports.createCamp = async (req, res) => {
     try {
-        const { location, traineeIds, /* appliedTrainerIds, selectedTrainerIds,*/ startTime, endTime} = req.body;
-
+        const { location, traineeIds, /* appliedTrainerIds, selectedTrainerIds,*/ startTime, endTime } = req.body;
+        console.log(req.body);
         const newCamp = new Camp({
             location,
-            traineeIds,
+            traineeIds: [],
             appliedTrainerIds: [],
-            // selectedTrainerIds,
+            selectedTrainerIds: [],
             startTime,
-            endTime
+            endTime,
+            selected: false
         }) 
-
+        console.log(newCamp);
         if (newCamp) {
             // generateTokenAndSetCookie(newUser._id, res)
             await newCamp.save();
 
             res.status(201).json({
                 campId: newCamp._id,
-                traineeIds: newUser.traineeIds,
+                traineeIds: newCamp.traineeIds,
             });
         } else {
             res.status(500).json({
@@ -34,3 +36,4 @@ export const createCamp = async (req, res) => {
         })
     }
 }
+// module.exports = { createCamp };
