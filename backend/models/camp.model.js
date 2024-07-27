@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const campSchema = new mongoose.Schema({
-//   campId: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
   location: {
     type: String,
     required: true
