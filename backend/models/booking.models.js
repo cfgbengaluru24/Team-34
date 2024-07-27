@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = new mongoose.Schema({
-  campID:{
+  campId:{
     type : mongoose.Schema.Types.ObjectId,
     ref : 'Camp'
   },
-  trainerID:{
+  trainerId:{
     type : mongoose.Schema.Types.ObjectId,
     ref : 'Trainer'
   },

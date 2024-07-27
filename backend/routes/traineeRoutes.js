@@ -1,10 +1,10 @@
 const express = require('express');
 const { protectRoute } = require('../middleware/protectRoute.js');
-const { createCamp } = require('../controllers/camp.controller.js');
+const { createCamp } = require('../controllers/trainer.controller.js');
 
 const router = express.Router();
 
-router.post("/create", protectRoute, createCamp);
+router.post("/create", protectRoute, createTrainer);
 
 
 module.exports = router;
