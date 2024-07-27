@@ -13,8 +13,8 @@ exports.createBooking = async (req, res) => {
             await newBooking.save();
             res.status(201).json({
                 bookingId: newBooking._id,
-                campId: newBooking.campId,
-                trainerId: newBooking.trainerId,
+                // campId: newBooking.campId,
+                // trainerId: newBooking.trainerId,
             });
         } else {
             res.status(500).json({

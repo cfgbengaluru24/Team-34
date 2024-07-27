@@ -21,7 +21,7 @@ exports.createCamp = async (req, res) => {
 
             res.status(201).json({
                 campId: newCamp._id,
-                traineeIds: newCamp.traineeIds,
+                // traineeIds: newCamp.traineeIds,
             });
         } else {
             res.status(500).json({

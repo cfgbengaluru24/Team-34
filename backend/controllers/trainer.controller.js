@@ -24,14 +24,14 @@ exports.createTrainer = async (req, res) => {
         await newTrainer.save();
         // Return the created trainer
         res.status(201).json({
-            trainerId: newTrainer._id,
-            fullname: newTrainer.fullname,
-            age: newTrainer.age,
-            location: newTrainer.location,
-            emailId: newTrainer.emailId,
-            skills: newTrainer.skills,
-            mobile: newTrainer.mobile,
-            gender: newTrainer.gender
+            trainerId: newTrainer._id
+            // fullname: newTrainer.fullname,
+            // age: newTrainer.age,
+            // location: newTrainer.location,
+            // emailId: newTrainer.emailId,
+            // skills: newTrainer.skills,
+            // mobile: newTrainer.mobile,
+            // gender: newTrainer.gender
         });
     } catch (error) {
         console.log("Error in trainer controller", error.message);

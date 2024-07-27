@@ -19,14 +19,14 @@ exports.createTrainee = async (req, res) => {
 
         res.status(201).json({
             traineeId: newTrainee._id,
-            fullname: newTrainee.fullname,
-            age: newTrainee.age,
-            location: newTrainee.location,
-            emailId: newTrainee.emailId,
-            mobile: newTrainee.mobile,
-            gender: newTrainee.gender,
-            attended: newTrainee.attended,
-            campId: newTrainee.campId
+            // fullname: newTrainee.fullname,
+            // age: newTrainee.age,
+            // location: newTrainee.location,
+            // emailId: newTrainee.emailId,
+            // mobile: newTrainee.mobile,
+            // gender: newTrainee.gender,
+            // attended: newTrainee.attended,
+            // campId: newTrainee.campId
         });
     } catch (error) {
         console.log("Error in trainee controller", error.message);
