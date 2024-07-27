@@ -1,13 +1,13 @@
-const Trainer = require('../models/trainer.model.js');
+const Trainer = require('../models/trainer.models.js');
 
 exports.createTrainer = async (req, res) => {
     try {
         const { fullname, age, location, emailId, skills, mobile, gender } = req.body;
-    
+        
         if (!fullname || !age || !location || !emailId || !skills || !mobile || !gender) {
             return res.status(400).json({ error: "All fields are required" });
         }
-
+        console.log(req.body);
         // Create a new trainer
         const newTrainer = new Trainer({
             fullname,
@@ -18,10 +18,10 @@ exports.createTrainer = async (req, res) => {
             mobile,
             gender
         });
-
         // Save the new trainer to the database
+        if(!newTrainer)
+            return res.status(404).json({ error: "Something went wrong" });
         await newTrainer.save();
-
         // Return the created trainer
         res.status(201).json({
             trainerId: newTrainer._id,
@@ -49,8 +49,8 @@ exports.retrieveTrainer = async (req, res) => {
             return res.status(400).json({ error: "Trainer ID is required" });
         }
 
-        const trainer = await Trainer.findById(trainerId);
-        if (trainer) {
+        const newTrainer = await Trainer.findById(trainerId);
+        if (newTrainer) {
             res.status(200).json({
                 trainerId: newTrainer._id,
                 fullname: newTrainer.fullname,
