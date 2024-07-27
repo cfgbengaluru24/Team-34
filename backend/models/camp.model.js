@@ -9,7 +9,11 @@ const campSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Trainee"
   }],
-  trainerIds: [{
+  appliedTrainerIds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Trainer"
+  }],
+  selectedTrainerIds: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Trainer"
   }],
@@ -21,7 +25,7 @@ const campSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  trainersSelected: {
+  selected: {
     type: Boolean,
     default: false
   }
