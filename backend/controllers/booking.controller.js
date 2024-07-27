@@ -42,10 +42,74 @@ exports.retrieveBooking = async (req, res) => {
         console.log(booking);
         
         if (booking) {
+            console.log(booking);
+            res.status(200).json(booking);
+        } else {
+            res.status(404).json({
+                error: "Booking not found"
+            });
+        }
+    } catch (error) {
+        console.log("Error in booking controller", error.message);
+        res.status(500).json({
+            error: "Internal server error"
+        });
+    }
+};
+
+exports.retrieveAllBooking = async (req, res) => {
+    try {
+        const bookings = await book.find();
+        if (bookings) {
+            res.status(200).json(bookings);
+        } else {
+            res.status(404).json({
+                error: "Bookings not found"
+            });
+        }
+    } catch (error) {
+        console.log("Error in booking controller", error.message);
+        res.status(500).json({
+            error: "Internal server error"
+        });
+    }
+};
+
+exports.acceptBooking = async (req, res) => {
+    try {
+        const { bookingId } = req.body;
+        console.log(req.body);
+        const booking = await book.findById(bookingId);
+        if (booking) {
+            booking.status = 1;
+            await booking.save();
             res.status(200).json({
-                bookingId: booking._id,
-                campId: booking.campId,
-                trainerId: booking.trainerId,
+                message: "Booking accepted"
+            });
+        } else {
+            res.status(404).json({
+                error: "Booking not found"
+            });
+        }
+    } catch (error) {
+        console.log("Error in booking controller", error.message);
+        res.status(500).json({
+            error: "Internal server error"
+        });
+    }
+};
+
+
+exports.cancelBooking = async (req, res) => {
+    try {
+        const { bookingId } = req.body;
+        console.log(req.body);
+        const booking = await book.findById(bookingId);
+        if (booking) {
+            booking.status = 2;
+            await booking.save();
+            res.status(200).json({
+                message: "Booking accepted"
             });
         } else {
             res.status(404).json({
