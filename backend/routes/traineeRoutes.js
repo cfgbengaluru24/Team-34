@@ -1,10 +1,10 @@
 const express = require('express');
 const { protectRoute } = require('../middleware/protectRoute.js');
-const { createTrainer } = require('../controllers/trainer.controller.js');
+const { createTrainee } = require('../controllers/trainee.controller.js');
 
 const router = express.Router();
 
-router.post("/create", protectRoute, createTrainer);
+router.post("/create", protectRoute, createTrainee);
 
 
 module.exports = router;
