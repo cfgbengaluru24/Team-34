@@ -49,8 +49,8 @@ exports.retrieveTrainer = async (req, res) => {
             return res.status(400).json({ error: "Trainer ID is required" });
         }
 
-        const trainee = await Trainer.findById(trainerId);
-        if (trainee) {
+        const trainer = await Trainer.findById(trainerId);
+        if (trainer) {
             res.status(200).json({
                 trainerId: newTrainer._id,
                 fullname: newTrainer.fullname,
