@@ -1,0 +1,9 @@
+/* TestimonialCarousel.css */
+.testimonial-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05);
+  }
+  

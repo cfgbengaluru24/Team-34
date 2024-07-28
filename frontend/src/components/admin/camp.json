@@ -1,0 +1,69 @@
+{
+    "camps": [
+        {
+            "_id": "66a4e55bfedfe6837182662c",
+            "location": "Bangalore, Karnataka",
+            "traineeIds": ["Array (3)"],
+            "appliedTrainerIds": ["Array (3)"],
+            "selectedTrainerIds": ["Array (3)"],
+            "startTime": "19th August 2024",
+            "endTime": "20th August 2024",
+            "selected": true,
+            "createdAt": "2024-07-27T12:17:31.279+00:00",
+            "updatedAt": "2024-07-27T17:17:46.509+00:00",
+            "__v": 7
+        },
+        {
+            "_id": "66a4e5d34d780857ebb302a4",
+            "location": "Chennai, India",
+            "traineeIds": [],
+            "appliedTrainerIds": [],
+            "selectedTrainerIds": [],
+            "startTime": "19th August 2024",
+            "endTime": "20th August 2024",
+            "selected": false,
+            "createdAt": "2024-07-27T12:19:31.250+00:00",
+            "updatedAt": "2024-07-27T12:19:31.250+00:00",
+            "__v": 0
+        },
+        {
+            "_id": "66a4e646ed10a6d40ad0af66",
+            "location": "Dehradun, Uttarakhand",
+            "traineeIds": [],
+            "appliedTrainerIds": [],
+            "selectedTrainerIds": [],
+            "startTime": "26th August 2024",
+            "endTime": "27th August 2024",
+            "selected": false,
+            "createdAt": "2024-07-27T12:21:26.328+00:00",
+            "updatedAt": "2024-07-27T12:21:26.328+00:00",
+            "__v": 0
+        },
+        {
+            "_id": "66a4e6c8c38f8fb9030feb44",
+            "location": "Kottayam, Kerala",
+            "traineeIds": [],
+            "appliedTrainerIds": [],
+            "selectedTrainerIds": [],
+            "startTime": "26th August 2024",
+            "endTime": "27th August 2024",
+            "selected": false,
+            "createdAt": "2024-07-27T12:23:36.333+00:00",
+            "updatedAt": "2024-07-27T12:23:36.333+00:00",
+            "__v": 0
+        },
+        {
+            "_id": "66a52496b872e81fe19ed4bb",
+            "location": "Mumbai, Maharashtra",
+            "traineeIds": [],
+            "appliedTrainerIds": [],
+            "selectedTrainerIds": [],
+            "startTime": "5th October 2024",
+            "endTime": "6th October 2024",
+            "selected": false,
+            "createdAt": "2024-07-27T16:47:18.040+00:00",
+            "updatedAt": "2024-07-27T16:47:18.040+00:00",
+            "__v": 0
+        }
+    ]
+}
